@@ -149,6 +149,11 @@ namespace Alchemy
             ShowInfo("Оксид алюминия");
         }
 
+        private void ToLab(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LaboratoryPage());
+        }
+
 
         private void Trigger_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

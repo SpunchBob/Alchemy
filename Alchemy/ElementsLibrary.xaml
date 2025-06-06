@@ -8,11 +8,38 @@
       d:DesignHeight="1080" d:DesignWidth="1600"
       Title="ElementsLibrary">
 
-    <Page.Resources>
-        <!-- Конвертер для расчета радиуса скругления -->
-        <!--local:HalfConverter x:Key="HalfConverter"/>-->
+    <Page.Background>
+        <!--    Создание градиента     -->
+        <LinearGradientBrush EndPoint="1, 1" StartPoint="0, 0">
+            <GradientStop Color="#70E500" Offset="0"/>
+            <GradientStop Color="#015b5e" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
 
+    <Page.Resources>
+ 
         <!-- Стиль для круглых кнопок -->
+        <!--<Style x:Key="NextButtonStyle" TargetType="Button">-->
+            <!--<Setter.Value>
+                <ControlTemplate TargetType="Button">
+                   
+                        <Border 
+                 x:Name="border"
+                 CornerRadius="50"
+                 BorderBrush="#128a84">
+
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#0d7b3b" Offset="0"/>
+                                    <GradientStop Color="#098a8d" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+
+                </Setter.Value>
+            </ControlTemplate>
+        </Style>-->
+        
         <Style x:Key="ElementButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="White"/>
@@ -25,7 +52,7 @@
                         <Grid>
                             <Border 
                                 x:Name="border"
-                                
+                                CornerRadius="50"
                                 BorderBrush="#128a84">
 
                                 <Border.Background>
@@ -114,6 +141,8 @@
                         <ColumnDefinition Width="272"/>
                         <ColumnDefinition Width="272"/>
                     </Grid.ColumnDefinitions>
+
+
 
                     <!--Код кнопок-->
                     <Button x:Name="Button_Calcium" Grid.Row="0" Grid.Column="0" Content="Кальций" 
@@ -269,7 +298,8 @@
 
         <!-- Правая колонка (можно заполнить позже) -->
 
-        <Border Grid.Column="1" Margin="10,161,10,10">
+
+        <Border Grid.Column="1" Margin="10,161,10,140">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#0d7b3b" Offset="0"/>
@@ -278,7 +308,7 @@
             </Border.Background>
 
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="10" VerticalAlignment="Stretch">
-                <StackPanel x:Name="InfoPanel">
+                <StackPanel x:Name="InfoPanel" Height="682">
                     <TextBlock x:Name="NameBlock" FontSize="33" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
                     <TextBlock x:Name="SymbolBlock" Style="{StaticResource TextBlockStyle}" Margin="0,10,0,0"/>
                     <TextBlock x:Name="NumberBlock" Style="{StaticResource TextBlockStyle}"/>
@@ -296,5 +326,8 @@
         <ScrollViewer VerticalScrollBarVisibility="Disabled"  Grid.Column="1" Grid.Row="0" HorizontalScrollBarVisibility="Auto" Padding="10" Margin="0,0,0,729" >
             <StackPanel x:Name="ChoosenPanel"  Orientation="Horizontal"></StackPanel>
         </ScrollViewer>
+
+        <Button Click="ToLab" Grid.Column="1"  Background="#3df2ae"  Content="Лаборатория" FontSize="30"  Width="300" Height="100"  Padding="10"    />
+
     </Grid>
 </Page>
