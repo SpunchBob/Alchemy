@@ -16,14 +16,18 @@ using System.Windows.Shapes;
 namespace Alchemy
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainWindowPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowPage : Page
     {
-        public MainWindow()
+        public MainWindowPage()
         {
             InitializeComponent();
-            MainFrame.Content = new MainWindowPage();
+        }
+
+        private void LabButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LaboratoryPage());
         }
     }
 }

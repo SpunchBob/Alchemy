@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Alchemy
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainMenuPAge.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainMenuPAge : Page
     {
-        public MainWindow()
+        public MainMenuPAge()
         {
             InitializeComponent();
-            MainFrame.Content = new MainWindowPage();
         }
     }
 }

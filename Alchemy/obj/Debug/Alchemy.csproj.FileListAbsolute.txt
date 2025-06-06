@@ -13,3 +13,7 @@ C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\Alchemy.csproj.GenerateReso
 C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\Alchemy.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\Alchemy.exe
 C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\Alchemy.pdb
+C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\MainWindowPage.g.cs
+C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\MainWindowPage.baml
+C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\LaboratoryPage.g.cs
+C:\Users\User\source\repos\Alchemy\Alchemy\obj\Debug\LaboratoryPage.baml
