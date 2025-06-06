@@ -27,7 +27,7 @@ namespace Alchemy
 
         private void LabButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new LaboratoryPage());
+            NavigationService.Navigate(new ElementsLibrary());
         }
     }
 }
