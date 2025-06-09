@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SubstanceInfo.cs" />
     <Page Include="ElementsLibrary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -73,11 +74,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Biblio.cs" />
     <Compile Include="Code\ChemicalElement.cs" />
     <Compile Include="Code\HalfConverter.cs" />
     <Compile Include="ElementsLibrary.xaml.cs">
       <DependentUpon>ElementsLibrary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Images.cs" />
     <Compile Include="LaboratoryPage.xaml.cs">
       <DependentUpon>LaboratoryPage.xaml</DependentUpon>
     </Compile>
@@ -89,11 +92,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MineralsLibrary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowPage.xaml.cs">
       <DependentUpon>MainWindowPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MineralsLibrary.xaml.cs">
+      <DependentUpon>MineralsLibrary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Poisk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -124,6 +135,15 @@
     <Resource Include="pictures\калий.png" />
     <Resource Include="pictures\кальций.png" />
     <Resource Include="pictures\магний.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\литий.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\водород.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\водород1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Alchemy.Code;
 using System.Text.Json;
 using System.IO;
@@ -30,6 +29,9 @@ namespace Alchemy
     {
         private List<ChemicalElement> elements;
         private ImageCollection imageCollection = new ImageCollection();
+        private HashSet<string> addedImagePaths = new HashSet<string>(); // хранит пути изображений
+
+
         public ElementsLibrary()
         {
             InitializeComponent();
@@ -149,11 +151,18 @@ namespace Alchemy
             ShowInfo("Оксид алюминия");
         }
 
-
-        private void Trigger_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ToLab(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new LaboratoryPage());
         }
+
+        private void ToMenu(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MainWindowPage());
+        }
+
+
+
 
         private void ShowInfo(string name)
         /*Метод для вывода ифнормации о элементе
@@ -187,15 +196,23 @@ namespace Alchemy
                 ElementImage.Source = bitmap;
 
                 // Копия изображения в коллекцию
-                var imageCopy = new System.Windows.Controls.Image
+                if (!addedImagePaths.Contains(imagePath))
                 {
-                    Source = bitmap,
-                    Width = 100,
-                    Height = 100,
-                };
+                    addedImagePaths.Add(imagePath);
+                    var imageCopy = new System.Windows.Controls.Image
+                    {
+                        Source = bitmap,
+                        Width = 100,
+                        Height = 100,
+                    };
 
-                Console.WriteLine("Элемент добавлен в коллекцию");
-                imageCollection.Images.Add(imageCopy);
+                    Console.WriteLine("Элемент добавлен в коллекцию");
+                    imageCollection.Images.Add(imageCopy);
+                }
+                else
+                {
+                    MessageBox.Show("Этот элемент уже выбран!");
+                }
             }
             catch (Exception ex)
             {
@@ -209,37 +226,11 @@ namespace Alchemy
 
             foreach (var bitmapImage in imageCollection.Images)
             {
-                if (!ChoosenPanel.Children.Contains(bitmapImage))
-                {
                     Console.WriteLine("Изображение добавленно в коллекцию");
                     ChoosenPanel.Children.Add(bitmapImage);
-                }
-                else
-                {
-                    Console.WriteLine("suka");
-                }
-                //    bool alreadyExists = ChoosenPanel.Children
-                //.OfType<System.Windows.Controls.Image>()
-                //.Any(existingImage =>
-                //    existingImage.Source is BitmapImage bmp &&
-                //    bitmapImage.Source is BitmapImage newBmp &&
-                //    bmp.UriSource == newBmp.UriSource);
-
-                //    if (!alreadyExists)
-                //    {
-                //        ChoosenPanel.Children.Add(bitmapImage);
-                //    }
-                //    else
-                //    {
-                //        Console.WriteLine("Проблема");
-                //    }
+              
             }
         }
-        //private bool IsContain(UIElementCollection collection, UIElement element) 
-        //{
-        //    if (collection.c)
-        //    foreach (UIElement _element in collection) return _element == element;
-        //}
-
+       
     }
 }

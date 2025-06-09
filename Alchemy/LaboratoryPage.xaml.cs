@@ -62,20 +62,20 @@ namespace Alchemy
                 if (name == "Purple") { chemical_object.Background = new SolidColorBrush(Colors.Purple); }
                 if(name == "Red") { chemical_object.Background = new SolidColorBrush(Colors.Red); }*/
 
-                chemical_object.Source = new BitmapImage(new Uri("C:/Users/User/Desktop/rock.jpg", UriKind.RelativeOrAbsolute));
+                //chemical_object.Source = new BitmapImage(new Uri("C:/Users/User/Desktop/rock.jpg", UriKind.RelativeOrAbsolute));
 
-                // Добавляем обработчик события
-                chemical_object.MouseDown += Object_MouseDown;
+                //// Добавляем обработчик события
+                //chemical_object.MouseDown += Object_MouseDown;
 
-                // Устанавливаем позицию в Grid
-                Grid.SetRow(chemical_object, 0);
-                Grid.SetColumn(chemical_object, column);
+                //// Устанавливаем позицию в Grid
+                //Grid.SetRow(chemical_object, 0);
+                //Grid.SetColumn(chemical_object, column);
 
-                // Добавляем элемент в Grid
-                MainGrid.Children.Add(chemical_object);
+                //// Добавляем элемент в Grid
+                //MainGrid.Children.Add(chemical_object);
 
-                // Увеличиваем номер столбца
-                column++;
+                //// Увеличиваем номер столбца
+                //column++;
             }
         }
 

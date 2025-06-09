@@ -8,11 +8,78 @@
       d:DesignHeight="1080" d:DesignWidth="1600"
       Title="ElementsLibrary">
 
-    <Page.Resources>
-        <!-- Конвертер для расчета радиуса скругления -->
-        <!--local:HalfConverter x:Key="HalfConverter"/>-->
+    <Page.Background>
+        <!--    Создание градиента     -->
+        <LinearGradientBrush EndPoint="1, 1" StartPoint="0, 0">
+            <GradientStop Color="#70E500" Offset="0"/>
+            <GradientStop Color="#015b5e" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
 
-        <!-- Стиль для круглых кнопок -->
+    <Page.Resources>
+        <Style x:Key="MainButtons" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border 
+                        x:Name="border"
+                        CornerRadius="50"
+                        BorderBrush="#1e645e"
+                        BorderThickness="5">
+
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#10c7bf" Offset="0"/>
+                                        <GradientStop Color="#3d659a" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+
+                                <ContentPresenter 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            TextBlock.TextAlignment="Center"/>
+                            </Border>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#0bd7b5"/>
+                                <Setter TargetName="border" Property="TextBlock.Foreground" Value="#0d5a1d"/>
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#83d89e" Offset="0"/>
+                                            <GradientStop Color="#3d5892" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="border" Property="Opacity" Value="0.8"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#0d5a1d"/>
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#4dcace" Offset="0"/>
+                                            <GradientStop Color="#3d5892" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="ElementButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="White"/>
@@ -25,8 +92,10 @@
                         <Grid>
                             <Border 
                                 x:Name="border"
+                                CornerRadius="50"
+                                BorderBrush="#1e645e"
+                                BorderThickness="5">
                                 
-                                BorderBrush="#128a84">
 
                                 <Border.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -50,7 +119,7 @@
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                             <GradientStop Color="#83d89e" Offset="0"/>
-                                            <GradientStop Color="#3daaad" Offset="1"/>
+                                            <GradientStop Color="#3d9dfe" Offset="1"/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -63,7 +132,7 @@
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                             <GradientStop Color="#4dcace" Offset="0"/>
-                                            <GradientStop Color="#3daac6" Offset="1"/>
+                                            <GradientStop Color="#776fb8" Offset="1"/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -83,10 +152,13 @@
 
 
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.6*" />
             <ColumnDefinition Width="0.4*" />
         </Grid.ColumnDefinitions>
+
+
 
         <TextBlock Grid.Column="0" Grid.Row="0" FontSize="48" TextAlignment="Center" Margin="8,0,8,16" FontWeight="Bold"  Foreground="#128099">Библиотека химических элементов</TextBlock>
 
@@ -114,6 +186,8 @@
                         <ColumnDefinition Width="272"/>
                         <ColumnDefinition Width="272"/>
                     </Grid.ColumnDefinitions>
+
+
 
                     <!--Код кнопок-->
                     <Button x:Name="Button_Calcium" Grid.Row="0" Grid.Column="0" Content="Кальций" 
@@ -158,7 +232,7 @@
                             Style="{StaticResource ElementButtonStyle}" 
                             Margin="20" 
                              FontSize="32">
-                        <TextBlock Text="Серная ксилота" 
+                        <TextBlock Text="Серная кислота" 
                           TextWrapping="Wrap"
                          HorizontalAlignment="Center"
                       VerticalAlignment="Center"/>
@@ -168,7 +242,7 @@
                         Style="{StaticResource ElementButtonStyle}" 
                         Margin="20" 
                          FontSize="32">
-                        <TextBlock Text="Cоляная ксилота" 
+                        <TextBlock Text="Cоляная кислота" 
                       TextWrapping="Wrap"
                      HorizontalAlignment="Center"
                   VerticalAlignment="Center"/>
@@ -267,34 +341,48 @@
             </ScrollViewer>
         </Grid>
 
-        <!-- Правая колонка (можно заполнить позже) -->
+       
+        <StackPanel Grid.Column="1" Margin="10" VerticalAlignment="Stretch">
 
-        <Border Grid.Column="1" Margin="10,161,10,10">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#0d7b3b" Offset="0"/>
-                    <GradientStop Color="#098a8d" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="10" VerticalAlignment="Stretch">
-                <StackPanel x:Name="InfoPanel">
-                    <TextBlock x:Name="NameBlock" FontSize="33" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
-                    <TextBlock x:Name="SymbolBlock" Style="{StaticResource TextBlockStyle}" Margin="0,10,0,0"/>
-                    <TextBlock x:Name="NumberBlock" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock x:Name="MassBlock" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock x:Name="DescriptionBlock" TextWrapping="Wrap" Margin="0,10,0,0" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock x:Name="HowToGetBlock" TextWrapping="Wrap" Margin="0,10,0,0" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock x:Name="UsingBlock" TextWrapping="Wrap" Margin="0,10,0,0" Style="{StaticResource TextBlockStyle}"/>
-                    <Image x:Name="ElementImage" Height="380" Width="320" Margin="0,10" HorizontalAlignment="Center"/>
-                </StackPanel>
+           
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" 
+                  HorizontalScrollBarVisibility="Auto"
+                  Padding="0"
+                  Height="100"
+                  Margin="0,0,0,10">
+                <StackPanel x:Name="ChoosenPanel" Orientation="Horizontal"/>
             </ScrollViewer>
-        </Border>
 
-        <!-- <StackPanel x:Name="ChoosenPanel" Orientation="Horizontal"  Margin="0,0,0,729" Height="107"  >
-        </StackPanel>-->
-        <ScrollViewer VerticalScrollBarVisibility="Disabled"  Grid.Column="1" Grid.Row="0" HorizontalScrollBarVisibility="Auto" Padding="10" Margin="0,0,0,729" >
-            <StackPanel x:Name="ChoosenPanel"  Orientation="Horizontal"></StackPanel>
-        </ScrollViewer>
+            <!-- Информационный блок с границей -->
+            <Border Margin="0,0,0,10">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#0d7b3b" Offset="0"/>
+                        <GradientStop Color="#098a8d" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollBarVisibility="Disabled"
+                      Padding="10"
+                      Height="700">
+                    <StackPanel x:Name="InfoPanel">
+                        <TextBlock x:Name="NameBlock" FontSize="33" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock x:Name="SymbolBlock" Style="{StaticResource TextBlockStyle}" Margin="0,10,0,0"/>
+                        <TextBlock x:Name="NumberBlock" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBlock x:Name="MassBlock" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBlock x:Name="DescriptionBlock" TextWrapping="Wrap" Margin="0,10,0,0" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBlock x:Name="HowToGetBlock" TextWrapping="Wrap" Margin="0,10,0,0" Style="{StaticResource TextBlockStyle}"/>
+                        <TextBlock x:Name="UsingBlock" TextWrapping="Wrap" Margin="0,10,0,0" Style="{StaticResource TextBlockStyle}"/>
+                        <Image x:Name="ElementImage" Height="400" Width="380"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" Width="360" HorizontalAlignment="Center">
+                <Button Content="⌂" Click="ToMenu" Style="{StaticResource MainButtons}" FontSize="64" Height="110" Width="110" Margin="0,0,120,0" Padding="10" />
+                <Button Content="🧪" Click="ToLab" Style="{StaticResource MainButtons}" FontSize="64" Height="110" Width="110" Padding="10" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
