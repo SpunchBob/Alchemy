@@ -22,15 +22,11 @@ namespace Alchemy
     /// <summary>
     /// Логика взаимодействия для ElementsLibrary.xaml
     /// </summary>
-    public class ImageCollection
-    {
-        public List<System.Windows.Controls.Image> Images { get; } = new List<System.Windows.Controls.Image> { };
-    }
+
     public partial class ElementsLibrary : Page
     {
         private List<ChemicalElement> elements;
-        private static ObservableCollection<Image> data = new ObservableCollection<Image> { };
-        private ImageCollection imageCollection = new ImageCollection();
+        private static ObservableCollection<Image> data = new ObservableCollection<Image> { };  // Коллекция элементов для передачи в модуль лаборатории
         private HashSet<string> addedImagePaths = new HashSet<string>(); // хранит пути изображений
 
 
@@ -39,7 +35,8 @@ namespace Alchemy
             InitializeComponent();
 
             // Загрузка JSON
-            string json = File.ReadAllText("info.json");
+            string jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "info.json");
+            string json = File.ReadAllText(jsonPath);
             elements = JsonSerializer.Deserialize<List<ChemicalElement>>(json);
             }
 
@@ -155,7 +152,7 @@ namespace Alchemy
 
         private void ToLab(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new LaboratoryPage(ElementsLibrary));
+            NavigationService.Navigate(new LaboratoryPage());
 
         }
 
@@ -189,9 +186,16 @@ namespace Alchemy
             // Вставка изображения
             try
             {
+
                 var imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, element.Image_path);
+                if (!File.Exists(imagePath))
+                {
+                    MessageBox.Show($"Файл изображения не найден:\n{imagePath}");
+                    return;
+                }
                 var bitmap = new BitmapImage();
                 bitmap.BeginInit();
+                bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
                 Console.WriteLine(imagePath.ToString());
                 bitmap.UriSource = new Uri(imagePath);
                 bitmap.CacheOption = BitmapCacheOption.OnLoad;
@@ -211,8 +215,6 @@ namespace Alchemy
                         Height = 100,
                     };
 
-                    Console.WriteLine("Элемент добавлен в коллекцию");
-                    imageCollection.Images.Add(imageCopy);
                     data.Add(imageCopy);
                 }
                 else
@@ -222,20 +224,19 @@ namespace Alchemy
             }
             catch (Exception ex)
             {
-                // Можно логировать или выводить заглушку
                 ElementImage.Source = null;
                 Console.WriteLine($"Ошибка загрузки изображения: {ex.Message}");
             }
 
             ChoosenPanel.Children.Clear();
 
-
-            foreach (var bitmapImage in imageCollection.Images)
+            foreach (var image in data) // Добавление элементов в стак панель
             {
-                    Console.WriteLine("Изображение добавленно в коллекцию");
-                    ChoosenPanel.Children.Add(bitmapImage);
-              
+             
+                ChoosenPanel.Children.Add(image);
+          
             }
+
         }
        
     }

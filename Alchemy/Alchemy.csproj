@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -143,7 +146,7 @@
     <Resource Include="pictures\водород.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pictures\водород1.png" />
+    <Resource Include="pictures\натрий.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

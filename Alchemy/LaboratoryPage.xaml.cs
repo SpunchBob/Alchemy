@@ -28,11 +28,11 @@ namespace Alchemy
         
         private Image selectedImage;
         private Image selectedImage_ToMove;
-        public LaboratoryPage(ElementsLibrary elementsLibrary)
+        public LaboratoryPage()
         {
             InitializeComponent();
             Objects_Creator(MainPanelGrid);
-            main_stack_panel.Resources = elementsLibrary.GetData();
+           // main_stack_panel.Resources = elementsLibrary.GetData();
         }
 
         // Массив, полученный из модуля библиотеки химических элементов
