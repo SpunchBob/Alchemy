@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using Alchemy.Code;
 using System.Text.Json;
 using System.IO;
+using System.Collections.ObjectModel;
 
 namespace Alchemy
 {
@@ -28,6 +29,7 @@ namespace Alchemy
     public partial class ElementsLibrary : Page
     {
         private List<ChemicalElement> elements;
+        private static ObservableCollection<Image> data = new ObservableCollection<Image> { };
         private ImageCollection imageCollection = new ImageCollection();
         private HashSet<string> addedImagePaths = new HashSet<string>(); // хранит пути изображений
 
@@ -39,7 +41,7 @@ namespace Alchemy
             // Загрузка JSON
             string json = File.ReadAllText("info.json");
             elements = JsonSerializer.Deserialize<List<ChemicalElement>>(json);
-        }
+            }
 
         private void Button_Calсium_Click(object sender, RoutedEventArgs e)
         {
@@ -153,7 +155,8 @@ namespace Alchemy
 
         private void ToLab(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new LaboratoryPage());
+            NavigationService.Navigate(new LaboratoryPage(ElementsLibrary));
+
         }
 
         private void ToMenu(object sender, RoutedEventArgs e)
@@ -161,8 +164,10 @@ namespace Alchemy
             NavigationService.Navigate(new MainWindowPage());
         }
 
-
-
+        public static ObservableCollection<Image> GetData()
+        {
+            return data; 
+        }
 
         private void ShowInfo(string name)
         /*Метод для вывода ифнормации о элементе
@@ -208,6 +213,7 @@ namespace Alchemy
 
                     Console.WriteLine("Элемент добавлен в коллекцию");
                     imageCollection.Images.Add(imageCopy);
+                    data.Add(imageCopy);
                 }
                 else
                 {

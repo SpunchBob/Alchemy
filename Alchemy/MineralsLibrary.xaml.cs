@@ -1,4 +1,4 @@
-﻿using ProbVerVirtual;
+﻿using Alchemy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -203,6 +203,11 @@ namespace Alchemy
             {
                 MessageBox.Show("Ошибка загрузки изображения: " + ex.Message);
             }
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

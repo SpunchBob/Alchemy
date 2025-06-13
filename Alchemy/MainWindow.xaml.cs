@@ -24,6 +24,8 @@ namespace Alchemy
         {
             InitializeComponent();
             MainFrame.Content = new MainWindowPage();
+            WindowState = WindowState.Maximized;
+
         }
     }
 }

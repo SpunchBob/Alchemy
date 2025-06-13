@@ -7,37 +7,81 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1600"
       Title="MainWindowPage">
+
+    <Page.Background>
+        <!--    Создание градиента     -->
+        <LinearGradientBrush EndPoint="1, 1" StartPoint="0, 0">
+            <GradientStop Color="#70E500" Offset="0"/>
+            <GradientStop Color="#015b5e" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
+    
     <!--    Page.Resources для стилей кнопок    -->
     <Page.Resources>
-        <Style x:Key="Main_Menu_Button" TargetType="Button">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush EndPoint="1, 1" StartPoint="0, 0">
-                        <GradientStop Color="#70E500" Offset="1"/>
-                        <GradientStop Color="#0CAB0A" Offset="0"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+        <Style x:Key="ElementButtonStyle" TargetType="Button">
+           
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                        BorderBrush="#ccc"
-                        BorderThickness="2, 2, 2, 2">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
+                        <Grid>
+                            <Border 
+                          x:Name="border"
+                          CornerRadius="80"
+                          BorderBrush="#1e645e"
+                          BorderThickness="5">
+
+
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#0d7b3b" Offset="0"/>
+                                        <GradientStop Color="#098a8d" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+
+                                <ContentPresenter 
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              TextBlock.TextAlignment="Center"/>
+                            </Border>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#0bd7b5"/>
+                                <Setter TargetName="border" Property="TextBlock.Foreground" Value="#0d5a1d"/>
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#83d89e" Offset="0"/>
+                                            <GradientStop Color="#3d9dfe" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="border" Property="Opacity" Value="0.8"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#0d5a1d"/>
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#4dcace" Offset="0"/>
+                                            <GradientStop Color="#776fb8" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#0CAB0A"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#0CDB00"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
+
     </Page.Resources>
     <Grid>
         <Grid.Background>
@@ -46,14 +90,14 @@
                 <GradientStop Color="#499500" Offset="0"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Style="{StaticResource Main_Menu_Button}" 
+        <Button Style="{StaticResource ElementButtonStyle}" 
                 Content="Лаборатория" 
                 HorizontalAlignment="Center" 
                 Margin="0,400,0,0" 
                 VerticalAlignment="Top" 
-                Height="150" 
-                Width="450" 
-                FontSize="50" 
+                Height="200" 
+                Width="500" 
+                FontSize="64" 
                 Click="LabButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -62,7 +106,7 @@
             </Button.Resources>
         </Button>
 
-        <Button Style="{StaticResource Main_Menu_Button}" Content="Библиотека минералов" HorizontalAlignment="Center" Margin="0,560,0,0" VerticalAlignment="Top" Height="150" Width="450" FontSize="35">
+        <Button Style="{StaticResource ElementButtonStyle}" Content="Минералы" HorizontalAlignment="Center" Margin="0,643,0,0" VerticalAlignment="Top" Height="200" Width="500" FontSize="64">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
@@ -70,7 +114,15 @@
             </Button.Resources>
         </Button>
 
-        <Button Style="{StaticResource Main_Menu_Button}" Content="Выход" HorizontalAlignment="Center" Margin="0,720,0,0" VerticalAlignment="Top" Height="150" Width="450" FontSize="50">
+        <Button Style="{StaticResource ElementButtonStyle}" Content="❌"  Margin="10,10,1411,0" VerticalAlignment="Top" Height="150" Width="150" FontSize="50">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Style="{StaticResource ElementButtonStyle}" Content="❌"  Margin="10,10,1411,0" VerticalAlignment="Top" Height="150" Width="150" FontSize="50">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
@@ -79,5 +131,6 @@
         </Button>
 
         <Label Content="Alchemy" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" FontSize="72" FontFamily="Comic Sans MS" FontStyle="Italic"/>
+        
     </Grid>
 </Page>
