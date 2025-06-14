@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.ConstrainedExecution;
@@ -32,21 +33,45 @@ namespace Alchemy
         {
             InitializeComponent();
             Objects_Creator(MainPanelGrid);
-           // main_stack_panel.Resources = elementsLibrary.GetData();
+            SetData(MainPanelGrid, ElementsLibrary.GetData());
         }
 
         // Массив, полученный из модуля библиотеки химических элементов
         
         string[] names = { "Blue", "Yellow", "Green", "Purple", "Red"};
 
-        public void Objects_Creator(Grid MainGrid)
+        private void SetData(StackPanel panel, ObservableCollection<Image> collection) 
+        {
+            int column = 0;
+            if (collection.Count != 0)
+            {
+                foreach (Image element in collection)
+                {
+                    Image copy = new Image()
+                    {
+                        Source = element.Source,
+                        Width = element.Width * 1.5,
+                        Height = element.Height * 1.5
+                    };
+                    Console.WriteLine($"Элемент добавленю Путь: {copy.Source}");
+                    copy.MouseDown += Object_MouseDown;
+                    panel.Children.Add(copy);
+                    column++;
+                }
+            }
+           
+            else { Console.WriteLine("Коллекция элементов пуста"); } 
+
+        }
+
+        public void Objects_Creator(StackPanel MainGrid)
         {
             int column = 0;
             // Добавляем строку и столбцы в Grids
-            for (int i = 0; i < names.Length; i++)
-            {
-                MainGrid.ColumnDefinitions.Add(new ColumnDefinition());
-            }
+            //for (int i = 0; i < names.Length; i++)
+            //{
+            //    MainGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            //}
             foreach (string name in names)
             {
                 Image chemical_object = new Image();
@@ -85,8 +110,9 @@ namespace Alchemy
         {
             Image object_ = new Image();
             selectedImage_ToMove = sender as Image;
-            object_.Width = 100;
-            object_.Height = 100;
+
+            object_.Width = selectedImage_ToMove.Width;
+            object_.Height = selectedImage_ToMove.Height;
 
             object_.Source = selectedImage_ToMove.Source;
             object_.MouseMove += Object_MouseMove;

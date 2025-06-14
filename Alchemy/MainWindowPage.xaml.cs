@@ -29,5 +29,9 @@ namespace Alchemy
         {
             NavigationService.Navigate(new ElementsLibrary());
         }
+        private void MineralButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MineralsLibrary());
+        }
     }
 }
