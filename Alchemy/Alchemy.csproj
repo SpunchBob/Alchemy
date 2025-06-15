@@ -148,5 +148,46 @@
   <ItemGroup>
     <Resource Include="pictures\натрий.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\кислород.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\цинк.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\алюминий.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\угольная_кислота.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\соляная_кислота.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\серная_кислота.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\вода.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\гидроксид_натрия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\гидроксид_калия.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\гидроксид_кальция.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\гидроксид_аммония.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\оксид_кальция.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pictures\оксид_магния.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

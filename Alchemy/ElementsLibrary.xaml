@@ -95,7 +95,7 @@
                                 CornerRadius="50"
                                 BorderBrush="#1e645e"
                                 BorderThickness="5">
-                                
+
 
                                 <Border.Background>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -341,15 +341,15 @@
             </ScrollViewer>
         </Grid>
 
-       
+
         <StackPanel Grid.Column="1" Margin="10" VerticalAlignment="Stretch">
 
-           
+            <!-- Информационный блок с границей -->
             <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                   HorizontalScrollBarVisibility="Auto"
                   Padding="0"
-                  Height="100"
-                  Margin="0,0,0,10">
+                  Height="148"
+                  >
                 <StackPanel x:Name="ChoosenPanel" Orientation="Horizontal"/>
             </ScrollViewer>
 

@@ -107,22 +107,22 @@ namespace Alchemy
 
         private void Buttom_Sodium_hydroxide_Click(object sender, RoutedEventArgs e)
         {
-            ShowInfo("Гидкроксид натрия");
+            ShowInfo("Гидроксид натрия");
         }
 
         private void Buttom_Potassium_hydroxide_Click(object sender, RoutedEventArgs e)
         {
-            ShowInfo("Гидкроксид калия");
+            ShowInfo("Гидроксид калия");
         }
 
         private void Buttom_Calcium_hydroxide_Click(object sender, RoutedEventArgs e)
         {
-            ShowInfo("Гидкроксид калия");
+            ShowInfo("Гидроксид кальция");
         }
 
         private void Buttom_Ammonium_hydroxide_Click(object sender, RoutedEventArgs e)
         {
-            ShowInfo("Гидкроксид аммония");
+            ShowInfo("Гидроксид аммония");
         }
 
         private void Buttom_Calcium_oxide_Click(object sender, RoutedEventArgs e)
@@ -150,18 +150,18 @@ namespace Alchemy
             ShowInfo("Оксид алюминия");
         }
 
-        private void ToLab(object sender, RoutedEventArgs e)
+        private void ToLab(object sender, RoutedEventArgs e)  // Переход в лабораторию
         {
             NavigationService.Navigate(new LaboratoryPage());
 
         }
 
-        private void ToMenu(object sender, RoutedEventArgs e)
+        private void ToMenu(object sender, RoutedEventArgs e) // Переход в меню
         {
             NavigationService.Navigate(new MainWindowPage());
         }
 
-        public static ObservableCollection<Image> GetData()
+        public static ObservableCollection<Image> GetData()  // Интерфейс для передачи списка выбранных элементов в лабораторию
         {
             return data; 
         }
@@ -186,35 +186,25 @@ namespace Alchemy
             // Вставка изображения
             try
             {
-
-                var imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, element.Image_path);
-                if (!File.Exists(imagePath))
-                {
-                    MessageBox.Show($"Файл изображения не найден:\n{imagePath}");
-                    return;
-                }
+                var imageUri = new Uri($"pack://application:,,,/{element.Image_path}", UriKind.Absolute);
                 var bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                Console.WriteLine(imagePath.ToString());
-                bitmap.UriSource = new Uri(imagePath);
+                bitmap.UriSource = imageUri;
                 bitmap.CacheOption = BitmapCacheOption.OnLoad;
                 bitmap.EndInit();
 
-                // Устанавливаем в основной Image
                 ElementImage.Source = bitmap;
 
                 // Копия изображения в коллекцию
-                if (!addedImagePaths.Contains(imagePath))
+                if (!addedImagePaths.Contains(element.Image_path))
                 {
-                    addedImagePaths.Add(imagePath);
+                    addedImagePaths.Add(element.Image_path);
                     var imageCopy = new System.Windows.Controls.Image
                     {
                         Source = bitmap,
-                        Width = 100,
-                        Height = 100,
+                        Width = 142,
+                        Height = 142,
                     };
-
                     data.Add(imageCopy);
                 }
                 else
@@ -225,16 +215,15 @@ namespace Alchemy
             catch (Exception ex)
             {
                 ElementImage.Source = null;
-                Console.WriteLine($"Ошибка загрузки изображения: {ex.Message}");
+                MessageBox.Show($"Ошибка загрузки изображения:\n{ex.Message}");
             }
+
 
             ChoosenPanel.Children.Clear();
 
             foreach (var image in data) // Добавление элементов в стак панель
             {
-             
                 ChoosenPanel.Children.Add(image);
-          
             }
 
         }
