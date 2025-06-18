@@ -160,38 +160,102 @@
     <Resource Include="pictures\цинк.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="изображения\Агат.jpg" />
-    <Resource Include="изображения\Алмаз.jpg" />
-    <Resource Include="изображения\Аметист.jpg" />
-    <Resource Include="изображения\Ацетилсалициловая_кислота.jpg" />
-    <Resource Include="изображения\Вода.jpg" />
-    <Resource Include="изображения\Глюкоза.jpg" />
-    <Resource Include="изображения\Гранат.jpg" />
-    <Resource Include="изображения\Изумруд.jpg" />
-    <Resource Include="изображения\КР_Агат.jpg" />
-    <Resource Include="изображения\КР_Алмаз.jpg" />
-    <Resource Include="изображения\КР_Аметист.jpg" />
-    <Resource Include="изображения\КР_Ацетилсалициловая_кислота.jpg" />
-    <Resource Include="изображения\КР_Вода.jpg" />
-    <Resource Include="изображения\КР_Глюкоза.jpg" />
-    <Resource Include="изображения\КР_Гранат.jpg" />
-    <Resource Include="изображения\КР_Изумруд.jpg" />
-    <Resource Include="изображения\КР_Малахит.jpg" />
-    <Resource Include="изображения\КР_Нитроглицирин.jpg" />
-    <Resource Include="изображения\КР_Пероксида_Водорода.jpg" />
-    <Resource Include="изображения\КР_Поваренная_соль.jpg" />
-    <Resource Include="изображения\КР_Рубин.jpg" />
-    <Resource Include="изображения\КР_Сапфир.jpg" />
-    <Resource Include="изображения\КР_Серная_кислота.jpg" />
-    <Resource Include="изображения\КР_Этанол.jpg" />
-    <Resource Include="изображения\Малахит.jpg" />
-    <Resource Include="изображения\Нитроглицирин.JPG" />
-    <Resource Include="изображения\Пероксид_водорода.jpg" />
-    <Resource Include="изображения\Поваренная_соль.jpg" />
-    <Resource Include="изображения\Рубин.jpg" />
-    <Resource Include="изображения\Сапфир.jpg" />
-    <Resource Include="изображения\Серная_кислота.jpg" />
-    <Resource Include="изображения\Этанол.jpg" />
+    <Content Include="Изображения\Агат.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Алмаз.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Аметист.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Ацетилсалициловая_кислота.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Вода.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Глюкоза.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Гранат.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Изумруд.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Агат.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Алмаз.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Аметист.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Ацетилсалициловая_кислота.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Вода.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Глюкоза.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Гранат.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Изумруд.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Малахит.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Нитроглицирин.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Пероксида_Водорода.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Поваренная_соль.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Рубин.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Сапфир.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Серная_кислота.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\КР_Этанол.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Малахит.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Нитроглицирин.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Пероксид_водорода.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Поваренная_соль.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Рубин.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Сапфир.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Серная_кислота.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Изображения\Этанол.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -114,7 +114,7 @@
 
             <TextBox x:Name="SearchBox" Width="400" TextChanged="SearchBox_TextChanged" Height="69"/>
             <Button Content="Поиск" Style="{StaticResource SearchButtonStyle}" Click="SearchButton_Click"/>
-            <Image x:Name="ChemicalImage" Width="500" Height="494" Margin="50,50,50,20" MouseDown="ChemicalImage_MouseDown"/>
+            <Image x:Name="ChemicalImage" Width="500" Height="494" Margin="50,50,50,20" Visibility="Visible" MouseDown="ChemicalImage_MouseDown"/>
             <!-- Название вещества с переносом текста -->
             <TextBlock x:Name="SubstanceName" 
                FontSize="28" 

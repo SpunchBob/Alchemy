@@ -1,6 +1,7 @@
 ﻿using Alchemy;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,17 +41,25 @@ namespace Alchemy
             {
                 try
                 {
+
                     // Отображение изображения вещества
                     ChemicalImage.Visibility = Visibility.Visible;
                     var imagePath = Images.ChemicalImages[result.Name];
-
                     // Загрузка изображения
                     var bitmapImage = new BitmapImage();
                     bitmapImage.BeginInit();
-                    bitmapImage.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapImage.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bitmapImage.UriSource = new Uri(imagePath, UriKind.Relative);
                     bitmapImage.EndInit();
                     ChemicalImage.Source = bitmapImage;
-
+                    var fullPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), imagePath);
+                    if (!File.Exists(fullPath))
+                    {
+                        Console.WriteLine($"Файл не найден: {fullPath}");
+                        return;
+                    }
+                    else { Console.WriteLine("файл найде"); }
                     // Сохранение текущего состояния
                     currentChemicalName = result.Name;
                     isShowingCrystalStructure = false;
@@ -166,7 +175,9 @@ namespace Alchemy
                     {
                         var crystalImage = new BitmapImage();
                         crystalImage.BeginInit();
-                        crystalImage.UriSource = new Uri(Images.CrystalStructureImages[currentChemicalName], UriKind.RelativeOrAbsolute);
+                        crystalImage.CacheOption = BitmapCacheOption.OnLoad;
+                        crystalImage.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        crystalImage.UriSource = new Uri(Images.CrystalStructureImages[currentChemicalName], UriKind.Relative);
                         crystalImage.EndInit();
                         ChemicalImage.Source = crystalImage;
 
