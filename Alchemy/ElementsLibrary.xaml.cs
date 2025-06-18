@@ -199,8 +199,23 @@ namespace Alchemy
                 if (!addedImagePaths.Contains(element.Image_path))
                 {
                     addedImagePaths.Add(element.Image_path);
-                    Console.WriteLine(element.Name);
                     data.Add(element);
+
+                    Image copy = new Image()
+                    {
+                        Source = new BitmapImage(new Uri($"pack://application:,,,/{element.Image_path}", UriKind.Absolute)),
+                        Width = 100,
+                        Height = 100,
+                    };
+
+                    copy.MouseLeftButtonDown += (s, e) => // Удаление при нажатии на элемент
+                    {
+                        ChoosenPanel.Children.Remove(copy);
+                        addedImagePaths.Remove(element.Image_path);
+                        data.Remove(element);
+                    };
+
+                    ChoosenPanel.Children.Add(copy);
                 }
                 else
                 {
@@ -212,15 +227,6 @@ namespace Alchemy
                 ElementImage.Source = null;
                 MessageBox.Show($"Ошибка загрузки изображения:\n{ex.Message}");
             }
-
-            // ChoosenPanel.Children.Clear(); Нахуй он тут нужен?
-
-            Image copy = new Image()
-            {
-                Source = new BitmapImage(new Uri($"pack://application:,,,/{element.Image_path}", UriKind.Absolute)), // Схуев так сложно? у тебя пути JSON полные указаны, че он сука в кэше ищет
-            };
-            ChoosenPanel.Children.Add(copy);
-
         }
        
     }
