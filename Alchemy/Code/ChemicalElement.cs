@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Alchemy.Code
 {
-    class ChemicalElement
+    public class ChemicalElement // Блять так сложно указать модификатор доступа?
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }

@@ -26,7 +26,7 @@ namespace Alchemy
     public partial class ElementsLibrary : Page
     {
         private List<ChemicalElement> elements;
-        private static ObservableCollection<Image> data = new ObservableCollection<Image> { };  // Коллекция элементов для передачи в модуль лаборатории
+        public static ObservableCollection<ChemicalElement> data = new ObservableCollection<ChemicalElement> { };  // Коллекция элементов для передачи в модуль лаборатории
         private HashSet<string> addedImagePaths = new HashSet<string>(); // хранит пути изображений
 
 
@@ -161,7 +161,7 @@ namespace Alchemy
             NavigationService.Navigate(new MainWindowPage());
         }
 
-        public static ObservableCollection<Image> GetData()  // Интерфейс для передачи списка выбранных элементов в лабораторию
+        public static ObservableCollection<ChemicalElement> GetData()  // Интерфейс для передачи списка выбранных элементов в лабораторию
         {
             return data; 
         }
@@ -199,13 +199,8 @@ namespace Alchemy
                 if (!addedImagePaths.Contains(element.Image_path))
                 {
                     addedImagePaths.Add(element.Image_path);
-                    var imageCopy = new System.Windows.Controls.Image
-                    {
-                        Source = bitmap,
-                        Width = 142,
-                        Height = 142,
-                    };
-                    data.Add(imageCopy);
+                    Console.WriteLine(element.Name);
+                    data.Add(element);
                 }
                 else
                 {
@@ -218,13 +213,13 @@ namespace Alchemy
                 MessageBox.Show($"Ошибка загрузки изображения:\n{ex.Message}");
             }
 
+            // ChoosenPanel.Children.Clear(); Нахуй он тут нужен?
 
-            ChoosenPanel.Children.Clear();
-
-            foreach (var image in data) // Добавление элементов в стак панель
+            Image copy = new Image()
             {
-                ChoosenPanel.Children.Add(image);
-            }
+                Source = new BitmapImage(new Uri($"pack://application:,,,/{element.Image_path}", UriKind.Absolute)), // Схуев так сложно? у тебя пути JSON полные указаны, че он сука в кэше ищет
+            };
+            ChoosenPanel.Children.Add(copy);
 
         }
        
