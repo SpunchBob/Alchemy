@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Odbc;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.ConstrainedExecution;
@@ -39,14 +40,14 @@ namespace Alchemy
         }
 
         // Массив, полученный из модуля библиотеки химических элементов
-        
+
         static public void GetPosition(object sender, MouseButtonEventArgs mouseButtonEvent)
         {
             Image _object = sender as Image;
             offset = mouseButtonEvent.GetPosition(_object);
             Console.WriteLine($"x: {offset.X}; y: {offset.Y}");
         }
-        private void SetData(StackPanel panel, ObservableCollection<ChemicalElement> collection) 
+        private void SetData(StackPanel panel, ObservableCollection<ChemicalElement> collection)
         {
             int column = 0;
             if (collection.Count != 0)
@@ -66,8 +67,8 @@ namespace Alchemy
                     column++;
                 }
             }
-           
-            else { Console.WriteLine("Коллекция элементов пуста"); } 
+
+            else { Console.WriteLine("Коллекция элементов пуста"); }
 
         }
 
@@ -76,32 +77,32 @@ namespace Alchemy
             int column = 0;
 
             Image chemical_object = new Image();
-                
+
             chemical_object.Width = 100;
             chemical_object.Height = 100;
-            chemical_object.Margin = new Thickness(20, 10,  50, 35);
+            chemical_object.Margin = new Thickness(20, 10, 50, 35);
 
-                // Устанавливаем цвет фона в зависимости от имени
-                /*if (name == "Blue") { chemical_object.Background = new SolidColorBrush(Colors.Blue); }
-                if (name == "Yellow") { chemical_object.Background = new SolidColorBrush(Colors.Yellow); }
-                if (name == "Green") { chemical_object.Background = new SolidColorBrush(Colors.Green); }
-                if (name == "Purple") { chemical_object.Background = new SolidColorBrush(Colors.Purple); }
-                if(name == "Red") { chemical_object.Background = new SolidColorBrush(Colors.Red); }*/
+            // Устанавливаем цвет фона в зависимости от имени
+            /*if (name == "Blue") { chemical_object.Background = new SolidColorBrush(Colors.Blue); }
+            if (name == "Yellow") { chemical_object.Background = new SolidColorBrush(Colors.Yellow); }
+            if (name == "Green") { chemical_object.Background = new SolidColorBrush(Colors.Green); }
+            if (name == "Purple") { chemical_object.Background = new SolidColorBrush(Colors.Purple); }
+            if(name == "Red") { chemical_object.Background = new SolidColorBrush(Colors.Red); }*/
 
-                //chemical_object.Source = new BitmapImage(new Uri("C:/Users/User/Desktop/rock.jpg", UriKind.RelativeOrAbsolute));
+            //chemical_object.Source = new BitmapImage(new Uri("C:/Users/User/Desktop/rock.jpg", UriKind.RelativeOrAbsolute));
 
-                //// Добавляем обработчик события
-                //chemical_object.MouseDown += Object_MouseDown;
+            //// Добавляем обработчик события
+            //chemical_object.MouseDown += Object_MouseDown;
 
-                //// Устанавливаем позицию в Grid
-                //Grid.SetRow(chemical_object, 0);
-                //Grid.SetColumn(chemical_object, column);
+            //// Устанавливаем позицию в Grid
+            //Grid.SetRow(chemical_object, 0);
+            //Grid.SetColumn(chemical_object, column);
 
-                //// Добавляем элемент в Grid
-                //MainGrid.Children.Add(chemical_object);
+            //// Добавляем элемент в Grid
+            //MainGrid.Children.Add(chemical_object);
 
-                //// Увеличиваем номер столбца
-                //column++;
+            //// Увеличиваем номер столбца
+            //column++;
             //}
         }
 
@@ -128,16 +129,16 @@ namespace Alchemy
         }
 
         // метод возврата на предыдущуюю странцу
-        public void BackButton_Click(object sender, RoutedEventArgs e) 
+        public void BackButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainWindowPage());
-        }       
-        
+        }
+
         // Метод инициализации перетаскивания объекта 
-        public void Object_MouseMove(object sender, MouseEventArgs e) 
+        public void Object_MouseMove(object sender, MouseEventArgs e)
         {
             selectedImage = sender as Image;
-            if (e.LeftButton == MouseButtonState.Pressed) 
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragDrop.DoDragDrop(selectedImage, selectedImage, DragDropEffects.Move);
             }
@@ -153,9 +154,9 @@ namespace Alchemy
             e.Handled = true;
             CheckCollision(selectedImage, dropPosition);
         }
-        
+
         // Метод для перемещения объекта в след за курсором
-        private void Canvas_Drag(object sender, DragEventArgs e) 
+        private void Canvas_Drag(object sender, DragEventArgs e)
         {
             Point dropPosition = e.GetPosition(TargetCanvas);
 
@@ -164,9 +165,9 @@ namespace Alchemy
             e.Handled = true;
         }
 
-        private void GetObjName(StackPanel panel) 
+        private void GetObjName(StackPanel panel)
         {
-            foreach (ChemicalElement element in ElementsLibrary.data) 
+            foreach (ChemicalElement element in ElementsLibrary.data)
             {
                 //Console.WriteLine(element.Name);
                 foreach (Image image in panel.Children)
@@ -225,29 +226,82 @@ namespace Alchemy
                     }
                 }
             }
-            foreach (var element in elementsToRemove) 
-            {
-                TargetCanvas.Children.Remove(element);
-            }
-            
+
+
             // Условия для химических реакций
-            
-            if ((obj1_Name == "Натрий" && obj2_Name == "Вода") || (obj1_Name == "Вода" && obj2_Name == "Натрий")) 
-            { 
-                Create_Object(dropPosition, "C:\\Users\\User\\Desktop\\Alchemy\\Alchemy\\pictures\\гидроксид_натрия.png"); 
+
+            if ((obj1_Name == "Натрий" && obj2_Name == "Вода") || (obj1_Name == "Вода" && obj2_Name == "Натрий"))
+            {
+                foreach (var element in elementsToRemove)
+                {
+                    TargetCanvas.Children.Remove(element);
+                }
+                Create_Object(dropPosition, "pictures/гидроксид_натрия.png");
+                Create_Object(dropPosition, "pictures/водород.png");
+            }
+            if ((obj1_Name == "Калий" && obj2_Name == "Вода") || (obj1_Name == "Вода" && obj2_Name == "Калий"))
+            {
+                foreach (var element in elementsToRemove)
+                {
+                    TargetCanvas.Children.Remove(element);
+                }
+                Create_Object(dropPosition, "pictures/гидроксид_калия.png");
+                Create_Object(dropPosition, "pictures/водород.png");
+            }
+            if ((obj1_Name == "Алюминий" && obj2_Name == "Кислород") || (obj1_Name == "Кислород" && obj2_Name == "Алюминий"))
+            {
+                foreach (var element in elementsToRemove)
+                {
+                    TargetCanvas.Children.Remove(element);
+                }
+                Create_Object(dropPosition, "pictures/оксид_алюминия.png");
+            }
+            if ((obj1_Name == "Кальций" && obj2_Name == "Кислород") || (obj1_Name == "Кислород" && obj2_Name == "Кальций"))
+            {
+                foreach (var element in elementsToRemove)
+                {
+                    TargetCanvas.Children.Remove(element);
+                }
+                Create_Object(dropPosition, "pictures/оксид_кальция.png");
+            }
+            if ((obj1_Name == "Магний" && obj2_Name == "Кислород") || (obj1_Name == "Кислород" && obj2_Name == "Магний"))
+            {
+                foreach (var element in elementsToRemove)
+                {
+                    TargetCanvas.Children.Remove(element);
+                }
+                Create_Object(dropPosition, "pictures/оксид_магния.png");
+            }
+            if ((obj1_Name == "Медь" && obj2_Name == "Кислород") || (obj1_Name == "Кислород" && obj2_Name == "Медь"))
+            {
+                foreach (var element in elementsToRemove)
+                {
+                    TargetCanvas.Children.Remove(element);
+                }
+                Create_Object(dropPosition, "pictures/оксид_меди.png");
+            }
+            if ((obj1_Name == "Цинк" && obj2_Name == "Кислород") || (obj1_Name == "Кислород" && obj2_Name == "Цинк"))
+            {
+                foreach (var element in elementsToRemove)
+                {
+                    TargetCanvas.Children.Remove(element);
+                }
+                Create_Object(dropPosition, "pictures/оксид_цинка.png");
             }
         }
+
 
         // Методы для создания новых объектов при колизии
         private void Create_Object(Point dropPosition, string path) 
         {
             Image _object = new Image();
 
-            _object.Width = 100;
-            _object.Height = 100;
+            _object.Width = 160;
+            _object.Height = 160;
 
             _object.Source = new BitmapImage(new Uri(path, UriKind.RelativeOrAbsolute));
             _object.MouseMove += Object_MouseMove;
+            _object.MouseDown += GetPosition;
 
             Canvas.SetLeft(_object, dropPosition.X);
             Canvas.SetTop(_object, dropPosition.Y);

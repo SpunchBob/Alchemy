@@ -217,3 +217,5 @@ C:\Users\Пользователь\Desktop\Alchemy\Alchemy\bin\Debug\Изобра
 C:\Users\Пользователь\Desktop\Alchemy\Alchemy\bin\Debug\Изображения\Серная_кислота.jpg
 C:\Users\Пользователь\Desktop\Alchemy\Alchemy\bin\Debug\Изображения\Этанол.jpg
 C:\Users\Пользователь\Desktop\Alchemy\Alchemy\obj\Debug\Alchemy_Content.g.cs
+C:\Users\User\Desktop\Alchemy\Alchemy\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\User\Desktop\Alchemy\Alchemy\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
