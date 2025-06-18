@@ -8,12 +8,13 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Alchemy</RootNamespace>
     <AssemblyName>Alchemy</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -157,6 +158,40 @@
     <Resource Include="pictures\соляная_кислота.png" />
     <Resource Include="pictures\угольная_кислота.png" />
     <Resource Include="pictures\цинк.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="изображения\Агат.jpg" />
+    <Resource Include="изображения\Алмаз.jpg" />
+    <Resource Include="изображения\Аметист.jpg" />
+    <Resource Include="изображения\Ацетилсалициловая_кислота.jpg" />
+    <Resource Include="изображения\Вода.jpg" />
+    <Resource Include="изображения\Глюкоза.jpg" />
+    <Resource Include="изображения\Гранат.jpg" />
+    <Resource Include="изображения\Изумруд.jpg" />
+    <Resource Include="изображения\КР_Агат.jpg" />
+    <Resource Include="изображения\КР_Алмаз.jpg" />
+    <Resource Include="изображения\КР_Аметист.jpg" />
+    <Resource Include="изображения\КР_Ацетилсалициловая_кислота.jpg" />
+    <Resource Include="изображения\КР_Вода.jpg" />
+    <Resource Include="изображения\КР_Глюкоза.jpg" />
+    <Resource Include="изображения\КР_Гранат.jpg" />
+    <Resource Include="изображения\КР_Изумруд.jpg" />
+    <Resource Include="изображения\КР_Малахит.jpg" />
+    <Resource Include="изображения\КР_Нитроглицирин.jpg" />
+    <Resource Include="изображения\КР_Пероксида_Водорода.jpg" />
+    <Resource Include="изображения\КР_Поваренная_соль.jpg" />
+    <Resource Include="изображения\КР_Рубин.jpg" />
+    <Resource Include="изображения\КР_Сапфир.jpg" />
+    <Resource Include="изображения\КР_Серная_кислота.jpg" />
+    <Resource Include="изображения\КР_Этанол.jpg" />
+    <Resource Include="изображения\Малахит.jpg" />
+    <Resource Include="изображения\Нитроглицирин.JPG" />
+    <Resource Include="изображения\Пероксид_водорода.jpg" />
+    <Resource Include="изображения\Поваренная_соль.jpg" />
+    <Resource Include="изображения\Рубин.jpg" />
+    <Resource Include="изображения\Сапфир.jpg" />
+    <Resource Include="изображения\Серная_кислота.jpg" />
+    <Resource Include="изображения\Этанол.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
