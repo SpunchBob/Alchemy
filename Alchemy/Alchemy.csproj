@@ -135,59 +135,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="pictures\алюминий.png" />
+    <Resource Include="pictures\вода.png" />
+    <Resource Include="pictures\водород.png" />
+    <Resource Include="pictures\гидроксид_аммония.png" />
+    <Resource Include="pictures\гидроксид_калия.png" />
+    <Resource Include="pictures\гидроксид_кальция.png" />
+    <Resource Include="pictures\гидроксид_натрия.png" />
     <Resource Include="pictures\калий.png" />
     <Resource Include="pictures\кальций.png" />
-    <Resource Include="pictures\магний.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\литий.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\водород.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\натрий.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="pictures\кислород.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\цинк.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\алюминий.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\угольная_кислота.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\соляная_кислота.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\серная_кислота.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\вода.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\гидроксид_натрия.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\гидроксид_калия.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\гидроксид_кальция.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pictures\гидроксид_аммония.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="pictures\литий.png" />
+    <Resource Include="pictures\магний.png" />
+    <Resource Include="pictures\натрий.png" />
+    <Resource Include="pictures\оксид_алюминия.png" />
     <Resource Include="pictures\оксид_кальция.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="pictures\оксид_магния.png" />
+    <Resource Include="pictures\оксид_меди2.png" />
+    <Resource Include="pictures\оксид_цинка.png" />
+    <Resource Include="pictures\серная_кислота.png" />
+    <Resource Include="pictures\соляная_кислота.png" />
+    <Resource Include="pictures\угольная_кислота.png" />
+    <Resource Include="pictures\цинк.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%b0%d0%bb%d1%8e%d0%bc%d0%b8%d0%bd%d0%b8%d0%b9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%b2%d0%be%d0%b4%d0%b0.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%b2%d0%be%d0%b4%d0%be%d1%80%d0%be%d0%b4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%b3%d0%b8%d0%b4%d1%80%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%b0%d0%bc%d0%b" +
+    "c%d0%be%d0%bd%d0%b8%d1%8f.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%b3%d0%b8%d0%b4%d1%80%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%ba%d0%b0%d0%b" +
+    "b%d0%b8%d1%8f.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%b3%d0%b8%d0%b4%d1%80%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%ba%d0%b0%d0%b" +
+    "b%d1%8c%d1%86%d0%b8%d1%8f.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%b3%d0%b8%d0%b4%d1%80%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%bd%d0%b0%d1%8" +
+    "2%d1%80%d0%b8%d1%8f.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%ba%d0%b0%d0%bb%d0%b8%d0%b9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%ba%d0%b0%d0%bb%d1%8c%d1%86%d0%b8%d0%b9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%ba%d0%b8%d1%81%d0%bb%d0%be%d1%80%d0%be%d0%b4.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%bb%d0%b8%d1%82%d0%b8%d0%b9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d0%b9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%bd%d0%b0%d1%82%d1%80%d0%b8%d0%b9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%b0%d0%bb%d1%8e%d0%bc%d0%b8%d0%bd%d0%b" +
+    "8%d1%8f.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%ba%d0%b0%d0%bb%d1%8c%d1%86%d0%b8%d1%8" +
+    "f.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%8f.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d0%bc%d0%b5%d0%b4%d0%b82.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d0%be%d0%ba%d1%81%d0%b8%d0%b4_%d1%86%d0%b8%d0%bd%d0%ba%d0%b0.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d1%81%d0%b5%d1%80%d0%bd%d0%b0%d1%8f_%d0%ba%d0%b8%d1%81%d0%bb%d0%be%d1%8" +
+    "2%d0%b0.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d1%81%d0%be%d0%bb%d1%8f%d0%bd%d0%b0%d1%8f_%d0%ba%d0%b8%d1%81%d0%bb%d0%b" +
+    "e%d1%82%d0%b0.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d1%83%d0%b3%d0%be%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f_%d0%ba%d0%b8%d1%81%d0%b" +
+    "b%d0%be%d1%82%d0%b0.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pictures/%d1%86%d0%b8%d0%bd%d0%ba.png")]
 
 

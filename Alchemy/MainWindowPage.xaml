@@ -15,11 +15,10 @@
             <GradientStop Color="#015b5e" Offset="1"/>
         </LinearGradientBrush>
     </Page.Background>
-    
+
     <!--    Page.Resources для стилей кнопок    -->
     <Page.Resources>
         <Style x:Key="ElementButtonStyle" TargetType="Button">
-           
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Padding" Value="10"/>
@@ -122,7 +121,7 @@
             </Button.Resources>
         </Button>
 
-        <Button Style="{StaticResource ElementButtonStyle}" Content="❌"  Margin="10,10,1411,0" VerticalAlignment="Top" Height="150" Width="150" FontSize="50">
+        <Button Style="{StaticResource ElementButtonStyle}" Content="❌"  Margin="10,10,1411,0" Click="Exit" VerticalAlignment="Top" Height="150" Width="150" FontSize="50">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
@@ -130,7 +129,24 @@
             </Button.Resources>
         </Button>
 
-        <Label Content="Alchemy" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" FontSize="72" FontFamily="Comic Sans MS" FontStyle="Italic"/>
-        
+        <Button Style="{StaticResource ElementButtonStyle}" Content="ℹ"  Margin="211,10,1239,0" Click="InfoButton_Click" VerticalAlignment="Top" Height="150" Width="150" FontSize="80">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Label Content="Alchemy" HorizontalAlignment="Center" Margin="0,85,0,0" Foreground="#0d7b3b" VerticalAlignment="Top" FontSize="120"  FontWeight="Bold"/>
+
+        <Label Content="🧪" HorizontalAlignment="Left" Margin="1192,209,0,0" Foreground="#0d7b3b" VerticalAlignment="Top" FontSize="150"  FontWeight="Bold"/>
+
+        <Label Content="🧪" HorizontalAlignment="Left" Margin="100,562,0,0" Foreground="#098a8d" VerticalAlignment="Top" FontSize="240"  FontWeight="Bold"/>
+
+
+
+
+
     </Grid>
 </Page>
